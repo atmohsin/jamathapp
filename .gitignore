@@ -1,0 +1,45 @@
+.metadata
+frontend/node_modules/
+frontend/.next/
+frontend/.swc/
+frontend/.*.env
+frontend/.eslintrc.cjs
+frontend/.npmrc
+frontend/package-lock.json
+
+springbootbackend/.mvn/
+springbootbackend/mvnw
+springbootbackend/mvnw.cmd
+springbootbackend/HELP.md
+springbootbackend/target/
+springbootbackend/!.mvn/wrapper/maven-wrapper.jar
+springbootbackend/!**/src/main/**/target/
+springbootbackend/!**/src/test/**/target/
+
+### STS ###
+springbootbackend/.apt_generated
+springbootbackend/.classpath
+springbootbackend/.factorypath
+springbootbackend/.project
+springbootbackend/.settings
+springbootbackend/.springBeans
+springbootbackend/.sts4-cache
+
+### IntelliJ IDEA ###
+springbootbackend/.idea
+springbootbackend/*.iws
+springbootbackend/*.iml
+springbootbackend/*.ipr
+
+### NetBeans ###
+springbootbackend/nbproject/private/
+springbootbackend/nbbuild/
+springbootbackend/dist/
+springbootbackend/nbdist/
+springbootbackend/.nb-gradle/
+springbootbackend/build/
+springbootbackend/!**/src/main/**/build/
+springbootbackend/!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
