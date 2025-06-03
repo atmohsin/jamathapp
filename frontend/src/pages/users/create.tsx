@@ -1,7 +1,7 @@
 import { useNavigation } from "@refinedev/core";
 import { useForm } from "@refinedev/react-hook-form";
 
-export const CategoryCreate = () => {
+export const UserCreate = () => {
   const { list } = useNavigation();
 
   const {

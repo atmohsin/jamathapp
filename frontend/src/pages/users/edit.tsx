@@ -1,7 +1,7 @@
 import { useNavigation } from "@refinedev/core";
 import { useForm } from "@refinedev/react-hook-form";
 
-export const CategoryEdit = () => {
+export const UserEdit = () => {
   const { list } = useNavigation();
 
   const {

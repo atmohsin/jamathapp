@@ -23,6 +23,12 @@ import {
   CategoryList,
   CategoryShow,
 } from "./pages/categories";
+import {
+  UserCreate,
+  UserEdit,
+  UserList,
+  UserShow,
+} from "./pages/users";
 
 function App() {
   return (
@@ -30,7 +36,7 @@ function App() {
       <RefineKbarProvider>
         <DevtoolsProvider>
           <Refine
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            dataProvider={dataProvider("http://localhost:8080/api")}
             routerProvider={routerBindings}
             resources={[
               {
@@ -96,10 +102,10 @@ function App() {
                   <Route path="show/:id" element={<CategoryShow />} />
                 </Route>
                 <Route path="/users">
-                  <Route index element={<CategoryList />} />
-                  <Route path="create" element={<CategoryCreate />} />
-                  <Route path="edit/:id" element={<CategoryEdit />} />
-                  <Route path="show/:id" element={<CategoryShow />} />
+                  <Route index element={<UserList />} />
+                  <Route path="create" element={<UserCreate />} />
+                  <Route path="edit/:id" element={<UserEdit />} />
+                  <Route path="show/:id" element={<UserShow />} />
                 </Route>
                 <Route path="*" element={<ErrorComponent />} />
               </Route>

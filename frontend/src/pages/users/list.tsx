@@ -3,7 +3,7 @@ import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
 import React from "react";
 
-export const CategoryList = () => {
+export const UserList = () => {
   const columns = React.useMemo<ColumnDef<any>[]>(
     () => [
       {
@@ -12,9 +12,9 @@ export const CategoryList = () => {
         header: "ID",
       },
       {
-        id: "title",
-        accessorKey: "title",
-        header: "Title",
+        id: "email",
+        accessorKey: "email",
+        header: "Email",
       },
       {
         id: "actions",
