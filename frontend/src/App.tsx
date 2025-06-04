@@ -30,13 +30,21 @@ import {
   UserShow,
 } from "./pages/users";
 
+import { jamathDataProvider } from "./providers/jamath-data-provider";
+
+
+const API_URL = "https://api.fake-rest.refine.dev";
+
 function App() {
   return (
     <BrowserRouter>
       <RefineKbarProvider>
         <DevtoolsProvider>
           <Refine
-            dataProvider={dataProvider("http://localhost:8080/api")}
+            dataProvider={{
+              default: dataProvider(API_URL),
+              jamathDataProvider: jamathDataProvider,
+            }}
             routerProvider={routerBindings}
             resources={[
               {
@@ -67,6 +75,7 @@ function App() {
                 show: "/users/show/:id",
                 meta: {
                   canDelete: true,
+                  dataProviderName: "jamathDataProvider",
                 },
               },
             ]}

@@ -87,7 +87,7 @@ export const UserList = () => {
         }}
       >
         <h1>List</h1>
-        <button onClick={() => create("categories")}>Create</button>
+        <button onClick={() => create("users")}>Create</button>
       </div>
       <div style={{ maxWidth: "100%", overflowY: "scroll" }}>
         <table>

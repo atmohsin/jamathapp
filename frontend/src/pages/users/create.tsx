@@ -18,7 +18,7 @@ export const UserCreate = () => {
         <div>
           <button
             onClick={() => {
-              list("categories");
+              list("users");
             }}
           >
             List
@@ -34,10 +34,34 @@ export const UserCreate = () => {
           }}
         >
           <label>
-            <span style={{ marginRight: "8px" }}>Title</span>
+            <span style={{ marginRight: "8px" }}>Name</span>
             <input
               type="text"
-              {...register("title", {
+              {...register("name", {
+                required: "This field is required",
+              })}
+            />
+            <span style={{ color: "red" }}>
+              {(errors as any)?.title?.message as string}
+            </span>
+          </label>
+          <label>
+            <span style={{ marginRight: "8px" }}>Email</span>
+            <input
+              type="text"
+              {...register("email", {
+                required: "This field is required",
+              })}
+            />
+            <span style={{ color: "red" }}>
+              {(errors as any)?.title?.message as string}
+            </span>
+          </label>
+          <label>
+            <span style={{ marginRight: "8px" }}>User Name</span>
+            <input
+              type="text"
+              {...register("userName", {
                 required: "This field is required",
               })}
             />
