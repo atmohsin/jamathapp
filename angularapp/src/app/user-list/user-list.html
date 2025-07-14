@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">User List</h2>
+        <input name="searchInput" [(ngModel)]="searchInput" id="searchbar" type="text" placeholder="Search..">
+        <a routerLink="/users/create" class="btn btn-primary">Add User</a>
+    </div>
+
+    <table class="table table-bordered table-hover" *ngIf="users.length > 0">
+        <thead class="table-light">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | filter : searchInput : 'email'">
+                <td>{{ user.firstName}}</td>
+                <td>{{ user.lastName}}</td>
+                <td>{{ user.email}}</td>
+                <td>{{ user.mobileno}}</td>
+                <td>
+                    <button (click)="editUser(user.id)" class="btn btn-success brn-sm me-2">Edit</button>
+                    <button (click)="deleteUser(user.id)" class="btn btn-danger brn-sm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

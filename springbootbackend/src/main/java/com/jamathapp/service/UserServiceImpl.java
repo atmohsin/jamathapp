@@ -6,8 +6,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.jamathapp.dto.UserDTO;
+import com.jamathapp.model.Role;
 import com.jamathapp.model.User;
-import com.jamathapp.model.UserDTO;
 import com.jamathapp.repository.UserRepository;
 
 @Service
@@ -41,9 +42,15 @@ public class UserServiceImpl implements UserService {
 	    @Override
 	    public UserDTO updateUser(Long id, UserDTO userDTO) {
 	        User user = userRepository.findById(id).orElseThrow();
-	        user.setName(userDTO.name());
+	        
+	        user.setFirstName(userDTO.firstName());
+	        user.setLastName(userDTO.lastName());
 	        user.setEmail(userDTO.email());
-	        user.setUserName(userDTO.userName());
+	        user.setMobileno(userDTO.mobileno());
+	        user.setPassword(userDTO.password());
+	        Role role = new Role();
+	        role.setId(userDTO.roleid());
+	        user.setRole(role);
 	        User updatedUser = userRepository.save(user);
 	        return convertToDTO(updatedUser);
 	    }
@@ -55,15 +62,20 @@ public class UserServiceImpl implements UserService {
 
 	    // Convert Product Entity to ProductDTO
 	    private UserDTO convertToDTO(User user) {
-	        return new UserDTO(user.getId(), user.getName(), user.getEmail(), user.getUserName());
+	        return new UserDTO(user.getId(), user.getFirstName(),user.getLastName(),user.getEmail(), user.getMobileno(),user.getPassword(),user.getRole().getId());
 	    }
 
 	    // Convert ProductDTO to Product Entity
 	    private User convertToEntity(UserDTO userDTO) {
 	        User user = new User();
-	        user.setName(userDTO.name());
+	        user.setFirstName(userDTO.firstName());
+	        user.setLastName(userDTO.lastName());
 	        user.setEmail(userDTO.email());
-	        user.setUserName(userDTO.userName());
+	        user.setMobileno(userDTO.mobileno());
+	        user.setPassword(userDTO.password());
+	        Role role = new Role();
+	        role.setId(userDTO.roleid());
+	        user.setRole(role);
 	        return user;
 	    }
 

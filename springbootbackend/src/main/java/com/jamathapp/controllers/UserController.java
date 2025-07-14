@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jamathapp.model.UserDTO;
+import com.jamathapp.dto.UserDTO;
 import com.jamathapp.service.UserService;
 
 @RestController
@@ -37,7 +37,7 @@ public class UserController {
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping( consumes = {"application/json"}) 
     public UserDTO createUser(@RequestBody UserDTO userDTO) {
         return userService.saveUser(userDTO);
     }

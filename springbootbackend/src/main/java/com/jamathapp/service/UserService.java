@@ -3,7 +3,7 @@ package com.jamathapp.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.jamathapp.model.UserDTO;
+import com.jamathapp.dto.UserDTO;
 
 public interface UserService {
 	

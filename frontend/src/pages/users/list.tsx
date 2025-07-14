@@ -16,6 +16,16 @@ export const UserList = () => {
         accessorKey: "email",
         header: "Email",
       },
+       {
+        id: "mobileno",
+        accessorKey: "mobileno",
+        header: "Mobile No",
+      },
+       {
+        id: "role.roleName",
+        accessorKey: "role.roleName",
+        header: "Role",
+      },
       {
         id: "actions",
         accessorKey: "id",
@@ -32,14 +42,14 @@ export const UserList = () => {
             >
               <button
                 onClick={() => {
-                  show("categories", getValue() as string);
+                  show("users", getValue() as string);
                 }}
               >
                 Show
               </button>
               <button
                 onClick={() => {
-                  edit("categories", getValue() as string);
+                  edit("users", getValue() as string);
                 }}
               >
                 Edit

@@ -34,18 +34,6 @@ export const UserCreate = () => {
           }}
         >
           <label>
-            <span style={{ marginRight: "8px" }}>Name</span>
-            <input
-              type="text"
-              {...register("name", {
-                required: "This field is required",
-              })}
-            />
-            <span style={{ color: "red" }}>
-              {(errors as any)?.title?.message as string}
-            </span>
-          </label>
-          <label>
             <span style={{ marginRight: "8px" }}>Email</span>
             <input
               type="text"
@@ -58,10 +46,22 @@ export const UserCreate = () => {
             </span>
           </label>
           <label>
-            <span style={{ marginRight: "8px" }}>User Name</span>
+            <span style={{ marginRight: "8px" }}>Mobile No</span>
             <input
               type="text"
-              {...register("userName", {
+              {...register("mobileno", {
+                required: "This field is required",
+              })}
+            />
+            <span style={{ color: "red" }}>
+              {(errors as any)?.title?.message as string}
+            </span>
+          </label>
+          <label>
+            <span style={{ marginRight: "8px" }}>Password</span>
+            <input
+              type="text"
+              {...register("password", {
                 required: "This field is required",
               })}
             />

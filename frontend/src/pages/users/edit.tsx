@@ -18,7 +18,7 @@ export const UserEdit = () => {
         <div>
           <button
             onClick={() => {
-              list("categories");
+              list("users");
             }}
           >
             List
@@ -34,15 +34,39 @@ export const UserEdit = () => {
           }}
         >
           <label>
-            <span style={{ marginRight: "8px" }}>Title</span>
+            <span style={{ marginRight: "8px" }}>Email</span>
             <input
               type="text"
-              {...register("title", {
+              {...register("email", {
                 required: "This field is required",
               })}
             />
             <span style={{ color: "red" }}>
-              {(errors as any)?.title?.message as string}
+              {(errors as any)?.email?.message as string}
+            </span>
+          </label>
+           <label>
+            <span style={{ marginRight: "8px" }}>Name</span>
+            <input
+              type="text"
+              {...register("name", {
+                required: "This field is required",
+              })}
+            />
+            <span style={{ color: "red" }}>
+              {(errors as any)?.name?.message as string}
+            </span>
+          </label>
+           <label>
+            <span style={{ marginRight: "8px" }}>User Name</span>
+            <input
+              type="text"
+              {...register("userName", {
+                required: "This field is required",
+              })}
+            />
+            <span style={{ color: "red" }}>
+              {(errors as any)?.userName?.message as string}
             </span>
           </label>
           <div>
